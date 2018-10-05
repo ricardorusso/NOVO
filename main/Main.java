@@ -1,7 +1,5 @@
 package main;
 
-import exer.ArrExer;
-import exer.ExerMethods;
 import exer.StringExer;
 import exer.ifSatement;
 
