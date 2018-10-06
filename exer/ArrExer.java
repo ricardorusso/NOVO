@@ -83,8 +83,7 @@ public abstract class ArrExer {
 		List<Integer> listOdd = new ArrayList<>();
 //		arrN.add(49);arrN.add(1);arrN.add(3);arrN.add(200);arrN.add(2);arrN.add(4);
 //		arrN.add(70);arrN.add(5);
-		
-		
+	
 		for (int i = 0; i < arrN.size(); i++) {
 			
 			if(arrN.get(i) % 2 == 0) {
@@ -125,9 +124,10 @@ public abstract class ArrExer {
 		int [] arr1= {1,2,7,6,8,9,0,10
 		};
 		
-		System.out.println(Arrays.asList(arr1));
+		
 		List<int[]> newArray = new ArrayList<>(Arrays.asList(arr1)) ;
 		String print ="";
+		
 		for (int[] is : newArray) {
 			print += is.toString() +",";
 		}
