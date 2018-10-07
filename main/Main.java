@@ -14,47 +14,50 @@ import javaCollection.TreeSetMapExer;
 
 public class Main {
 	public static String fox = "Theajkdandkan23";
-	public static int [] arrN= {0,2,1,3,4,231,7	,213213};
-	public static TreeSet<String> treeColors = new TreeSet<>(Arrays.asList("red","blue","orange","black","blue", "yellow"));
-	public static TreeMap<Integer, ?> TreeMapExample = new TreeMap<>(TreeSetMapExer.putKeyTreeSet(treeColors));
-	
-	public static void main(String[] args){
-		  
-		//ExerArrayList exerArr = new ExerArrayList();
-	
-		//StringExer m = new StringExer();
-		//upperStringFox();
-		//m.calcMultiple(100);
-		//m.reverString();
-		//m.coutLettersNumbersSpaces();
-		//m.removeAC();
-		//m.numberEqualsPartString();
-		//m.splitString2("asdasdasasasdasdasasasdasdasas", 3);
-		//m.reverseString("Ola sua grande ");
-		//ExerArrayList.arrListaColor();
-		//ArrExer.findMissingNumber();
-		//ArrExer.removeDuplicate();
-		//ArrExer.findLonguestConsecitiveElement();
-		//ArrExer.seperateEvenOddNUmber();
-		//ArrExer.duplicateElement();
-		//ArrExer.convertArrayList();
-		//ArrExer.sortArrString(arrN, fox);
-		//ArrExer.seperateZeroOneArr();  
-		//ArrExer.fixOrderArr();
-		 //ArrExer.averageWithoutLargetsAndSmallest();
-		//System.out.println(ArrExer.countMinNumber()) ;
-		//StringExer.countStringVogal("aEeg");
-		//System.out.println(ExerMethods.checkPass(fox));
-		//System.out.println(ifSatement.weekDay(4));
-		//System.out.println(TreeSetMapExer.createTreeSet());
-		//System.out.println(TreeSetMapExer.copyToAnotherTree(treeColors));
-		//System.out.println(TreeSetMapExer.putKeyTreeSet(treeColors));
-		//System.out.println(TreeSetMapExer.shearchValueTreeMap(3));
-	//	System.out.println(TreeSetMapExer.getAllTheKeysFromTreeMap(TreeMapExample));
-		System.out.println(TreeSetMapExer.removeAllElementsTreeMap(TreeMapExample));
-		
-		System.out.println(TreeMapExample);
+	public static int[] arrN = { 0, 2, 1, 3, 4, 231, 7, 213213 };
+	public static TreeSet<String> treeColors = new TreeSet<>(
+			Arrays.asList("red", "blue", "orange", "black", "blue", "yellow"));
+	public static TreeMap<Integer, String> TreeMapExample = new TreeMap<>(TreeSetMapExer.putKeyTreeSet(treeColors));
+
+	public static void main(String[] args) {
+		TreeMapExample.put(69, "posição ");
+		TreeMapExample.put(51, "sadas");
+
+		// ExerArrayList exerArr = new ExerArrayList();
+
+		// StringExer m = new StringExer();
+		// upperStringFox();
+		// m.calcMultiple(100);
+		// m.reverString();
+		// m.coutLettersNumbersSpaces();
+		// m.removeAC();
+		// m.numberEqualsPartString();
+		// m.splitString2("asdasdasasasdasdasasasdasdasas", 3);
+		// m.reverseString("Ola sua grande ");
+		// ExerArrayList.arrListaColor();
+		// ArrExer.findMissingNumber();
+		// ArrExer.removeDuplicate();
+		// ArrExer.findLonguestConsecitiveElement();
+		// ArrExer.seperateEvenOddNUmber();
+		// ArrExer.duplicateElement();
+		// ArrExer.convertArrayList();
+		// ArrExer.sortArrString(arrN, fox);
+		// ArrExer.seperateZeroOneArr();
+		// ArrExer.fixOrderArr();
+		// ArrExer.averageWithoutLargetsAndSmallest();
+		// System.out.println(ArrExer.countMinNumber()) ;
+		// StringExer.countStringVogal("aEeg");
+		// System.out.println(ExerMethods.checkPass(fox));
+		// System.out.println(ifSatement.weekDay(4));
+		// System.out.println(TreeSetMapExer.createTreeSet());
+		// System.out.println(TreeSetMapExer.copyToAnotherTree(treeColors));
+		// System.out.println(TreeSetMapExer.putKeyTreeSet(treeColors));
+		// System.out.println(TreeSetMapExer.shearchValueTreeMap(3));
+		// System.out.println(TreeSetMapExer.getAllTheKeysFromTreeMap(TreeMapExample));
+		// System.out.println(TreeSetMapExer.removeAllElementsTreeMap(TreeMapExample));
+		// System.out.println(TreeMapExample);
+		//System.out.println(TreeSetMapExer.greatestValueKeyMap(TreeMapExample));
+		System.out.println(TreeSetMapExer.reverseOrderKeys(TreeMapExample));
 	}
-	
-	
+
 }
