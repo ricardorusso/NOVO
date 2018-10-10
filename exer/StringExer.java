@@ -118,9 +118,9 @@ public class StringExer {
 			if ((arrFox.length - 1) % i == 0) {
 				lista.add(i + "");
 			}
-			;
+			
 		}
-		;
+		
 
 		System.out.println(lista);
 		return lista;

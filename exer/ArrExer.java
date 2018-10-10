@@ -2,7 +2,9 @@ package exer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public abstract class ArrExer {
 
@@ -242,5 +244,36 @@ public abstract class ArrExer {
 		return index;
 
 	}
+	public static void getPointsForExerciceII() {
+		Set<Integer> noCerto = new HashSet<>(Arrays.asList(1, 3, 4, 6, 8, 9, 13, 15, 16, 17 , 19)) ;
+		Set<Integer> yesCerto = new HashSet<>();
+		
+		for (int i = 1; i <= 24; i++) {
+			if(!noCerto.contains(i)) {
+				yesCerto.add(i);
+				}
+			}
+		Set<Integer> myNoCerto = new HashSet<>(Arrays.asList(1,4,7,8,9,11,12,15,16,17,21,23));
+		Set<Integer> myYescerto = new HashSet<>();
+		
+		for (int i = 1; i <= 24; i++) {
+			if(!myNoCerto.contains(i)) {
+				myYescerto.add(i);
+			}
+		}
+		int points = 0;
+		for (Integer integer : noCerto) {
+			points += (myNoCerto.contains(integer)) ? 1: 0 ;
+			
+		}
+		for (Integer integer : yesCerto) {
+			points += (myYescerto.contains(integer)) ? 1: 0;
+		}
+		
+		
+		System.out.println(points);
+		
+	}
+	
 
 }
