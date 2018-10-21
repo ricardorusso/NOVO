@@ -2,7 +2,6 @@ package javaCollection;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.NavigableSet;
@@ -30,8 +29,8 @@ public abstract class TreeSetMapExer {
 	}
 	// 2. Write a Java program to copy a Tree Map content to another Tree Map.
 
-	public static SortedSet<?> copyToAnotherTree(TreeSet<?> tree) {
-		TreeSet<?> newTree = new TreeSet<>(tree);
+	public static SortedSet<?> copyToAnotherTree(SortedSet<?> tree) {
+		SortedSet<?> newTree = new TreeSet<>(tree);
 		// newTree.addAll(setColors);
 		System.out.println("Saida: ");
 		for (Object object : newTree) {
@@ -44,11 +43,11 @@ public abstract class TreeSetMapExer {
 	// 3. Write a Java program to search a key in a Tree Map.
 	public static SortedMap<Integer, String> putKeyTreeSet(SortedSet<String> treeColors) {
 
-		TreeMap<Integer, String> mapColorsKey = new TreeMap<Integer, String>();
+		SortedMap<Integer, String> mapColorsKey = new TreeMap<>();
 
 		List<String> listaColors = new ArrayList<>(treeColors);
 
-		// System.out.println(listaColors.size() + listaColors.get(3));
+		
 		for (int i = 0; i < listaColors.size(); i++) {
 
 			mapColorsKey.put(i, listaColors.get(i));
@@ -95,7 +94,7 @@ public abstract class TreeSetMapExer {
 
 	// 8. Write a Java program to get a key-value mapping associated with the
 	// greatest key and the least key in a map.
-	public static Object greatestValueKeyMap(TreeMap<Integer, ?> map) {
+	public static Object greatestValueKeyMap(SortedMap<Integer, ?> map) {
 
 		return  "First key: " + map.firstKey() + " Value: " + map.get(map.firstKey()) + "\n"
 				+ "Last Key: " + map.lastKey() + " Value: " + map.get(map.lastKey());
@@ -105,15 +104,15 @@ public abstract class TreeSetMapExer {
 	
 	//10. Write a Java program to get a reverse order view of the keys contained in a given map.
 	
-	public static NavigableSet<Integer> reverseOrderKeys(TreeMap<Integer, ?> map) {
-		NavigableSet<Integer> reverseKeys = map.descendingKeySet();
+	public static NavigableSet<Integer> reverseOrderKeys(SortedMap<Integer, ?> map) {
+		NavigableSet<Integer> reverseKeys = ((TreeMap<Integer, String>) map).descendingKeySet();
 		StringBuilder temp = new StringBuilder();
 		for (Integer integer : reverseKeys) {
 			temp.append(integer + " ");
 		}
 		
 		System.out.println(temp);
-		return map.descendingKeySet();
+		return ((TreeMap<Integer, String>) map).descendingKeySet();
 		
 	}
 	
@@ -152,7 +151,7 @@ public abstract class TreeSetMapExer {
 	//10. Write a Java program to compare two hash set.
 	
 	public static String compare2HashSet(Set<?> set1, Set<?> set2) {
-		//set2 = new HashSet<>();
+		
 		StringBuilder str = new StringBuilder();
 		for (Object object : set1) {
 			
@@ -161,8 +160,10 @@ public abstract class TreeSetMapExer {
 			}
 			
 		}
-		return str.length()>0 ? str.toString() : "Vazio";
+		return str.length()>0 ? str.toString() : "Não tem nada igual";
 	}
+	
+	//19. Write a Java program to remove and get a key-value mapping associated with the least key in a map.
 	
 	
 	

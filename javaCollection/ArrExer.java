@@ -1,4 +1,4 @@
-package exer;
+package javaCollection;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,8 +6,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public abstract class ArrExer {
-
+public abstract interface ArrExer {
+	static int[] exampleArr = {0,4,6,44,3,4,4,5,6,7,8};
 	// 24. Write a Java program to find a missing number in an array
 	public static int findMissingNumber() {
 		int[] arrN = { 0, 2, 1, 3, 4, 6, 7 };
@@ -227,7 +227,7 @@ public abstract class ArrExer {
 	// 47 Write a Java program to find the rotation count in a given rotated sorted
 	// array of integers.
 
-	public static int countMinNumber() {
+	public static  int countMinNumber() {
 		int[] arr = { 35, 32, 30, 14, 18, 21, 27 };
 
 		int minNumber = arr[0];
@@ -274,6 +274,13 @@ public abstract class ArrExer {
 		System.out.println(points);
 		
 	}
+	//28. Write a Java program to get the difference between the largest and smallest values in an array of integers. The length of the array must be 1 and above.
+	public static void diferenceBetwennLargestAndSmallest(int [] intArr ) {
+		
+		Arrays.sort(intArr);
+		
+		System.out.println("O maior: " + intArr[intArr.length-1] );
+		System.out.println("O menor: " + intArr[0]);
+	}
 	
-
 }

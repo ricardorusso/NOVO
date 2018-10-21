@@ -2,20 +2,22 @@ package main;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
+import java.util.Map;
 import java.util.Set;
 import java.util.SortedMap;
 import java.util.SortedSet;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-import exer.ArrExer;
-import javaCollection.ExerArrayList;
+import exer.StringExer;
+import javaCollection.ArrExer;
 import javaCollection.TreeSetMapExer;
 
-public class Main   {
+public class Main {
 	public static final String FOX = "Theajkdandkan23f";
 	public static final int[] arrN = { 0, 2, 1, 3, 4, 231, 7, 213213 };
 	public static SortedSet<String> treeColors = new TreeSet<>(
@@ -59,7 +61,7 @@ public class Main   {
 		// ArrExer.seperateZeroOneArr();
 		// ArrExer.fixOrderArr();
 		// ArrExer.averageWithoutLargetsAndSmallest();
-		// System.out.println(ArrExer.countMinNumber()) ;
+		//System.out.println(ArrExer.countMinNumber()) ;
 		// StringExer.countStringVogal("aEeg");
 		// System.out.println(ExerMethods.checkPass(fox));
 		// System.out.println(ifSatement.weekDay(4));
@@ -77,8 +79,41 @@ public class Main   {
 		//TreeSetMapExer.convertHashSetIntoList(setExample);
 		
 		//System.out.println(TreeSetMapExer.compare2HashSet(setExample, setExample));
-		ArrExer.getPointsForExerciceII();
+		//ArrExer.getPointsForExerciceII();
+		//System.out.println(Other.breakInteger((short) 5555));
 		
+		//ArrExer.diferenceBetwennLargestAndSmallest(arrN);
+		//System.out.println(treeMapExample.containsValue("red"));
+		//System.out.println(treeColors);
+//		for (String string : treeColors) {
+//			System.out.println(string);
+//		}
+		
+//		Iterator<String> it = treeColors.iterator();
+//		
+//	
+//		
+//		StringExer.upperStringFox();
+//		treeMapExample.replace(0, "black", "Pink");
+//		System.out.println(treeMapExample);
+//		treeMapExample.remove(treeMapExample.firstKey());		
+//		System.out.println(treeMapExample);
+//
+//		System.out.println(treeMapExample.subMap(1,4 ));
+		
+		//StringExer.findLenghtWithoutRepeatingChar2();
+		//StringExer.upperStringFox();
+	//	StringExer.removeCardinal();
+	//	StringExer.countDuplicate();
+		//StringExer.countDuplicate1();
+//		System.out.println(treeMapExample);
+//		treeMapExample.put(1, "red1");
+//		System.out.println(treeMapExample);
+	
+		//StringExer.checkRotacion("ABBA", "AbBA");
+		//StringExer.removeZ();
+	//	StringExer.prefixMrs();
+		StringExer.joinTwoStringsTogether("Welcome", "home");
 		
 	}
 
