@@ -6,7 +6,7 @@ import java.util.List;
 
 public abstract class ExerMethods {
 
-	public static String fox = "The_quick_brown_fox_jumps_over_the_lazy_dog_ac";
+	private static String fox = "The_quick_brown_fox_jumps_over_the_lazy_dog_ac";
 
 	// 11. Write a Java method to check whether a string is a valid password. Go to
 	// the editor
@@ -21,7 +21,7 @@ public abstract class ExerMethods {
 			System.out.println("Bad size " + str.length());
 			return false;
 		}
-		;
+		
 		List<Character> badChar = new ArrayList<>(Arrays.asList('_', '+', ',', '-', '@'));
 		List<Integer> numbers = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9));
 		boolean atLeast2Numbers = false;

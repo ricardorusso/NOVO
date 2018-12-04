@@ -17,6 +17,9 @@ public abstract class TreeSetMapExer {
 	public static SortedSet<String> setColors = new TreeSet<String>();
 	public static SortedMap<Integer, String> staticTreeMap =  putKeyTreeSet(Main.treeColors);
 	public static Map<Integer, String> staticHashMap = new HashMap<>(staticTreeMap);
+	private TreeSetMapExer() {
+		
+	}
 
 	// 1. Write a Java program to create a new tree set, add some colors (string)
 	// and print out the tree set.
@@ -110,7 +113,7 @@ public abstract class TreeSetMapExer {
 		for (Integer integer : reverseKeys) {
 			temp.append(integer + " ");
 		}
-		
+			
 		System.out.println(temp);
 		return ((TreeMap<Integer, String>) map).descendingKeySet();
 		

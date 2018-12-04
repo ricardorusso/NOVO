@@ -1,6 +1,6 @@
 package exer;
 
-public class ifSatement {
+public interface IfSatement {
 
 //	Write a Java program that reads in two floating-point numbers and tests whether they are the same up to three decimal places.
 //

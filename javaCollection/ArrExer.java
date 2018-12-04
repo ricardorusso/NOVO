@@ -3,11 +3,15 @@ package javaCollection;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-public abstract interface ArrExer {
-	static int[] exampleArr = {0,4,6,44,3,4,4,5,6,7,8};
+public abstract class ArrExer {
+	private ArrExer() {
+		
+	}
+	public static int[] exampleArr = {0,4,6,44,3,4,4,5,6,7,8};
 	// 24. Write a Java program to find a missing number in an array
 	public static int findMissingNumber() {
 		int[] arrN = { 0, 2, 1, 3, 4, 6, 7 };
@@ -282,5 +286,57 @@ public abstract interface ArrExer {
 		System.out.println("O maior: " + intArr[intArr.length-1] );
 		System.out.println("O menor: " + intArr[0]);
 	}
+	//31. Write a Java program to check if the sum of all the 10's in the array is exactly 30. Return false if the condition does not satisfy, otherwise true.
+	
+	public static boolean checkSum30(int[] arr) {
+		
+		int temp = 0;
+		for (int i = 0; i < arr.length; i++) {
+			temp+= arr[i];
+		}
+		System.out.println(temp);
+		return temp==30 ? temp==30 : temp!=30;
+		
+	}
+
+	//39. Write a Java program to print all the LEADERS in the array
+	public static void printLeader() {
+		int [] arr = {10, 9, 14, 23, 15, 0, 9};
+		int sum = 0;
+		List<Integer> list = new ArrayList<>();
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = i+1; j < arr.length-1; j++) {
+				sum +=arr[j];			
+				}
+			if(arr[i] > sum) {
+				list.add(arr[i]);
+			}
+			sum = 0;
+		}
+		System.out.println(list.toString());
+	}
+	
+	//Write a Java program to arrange the elements of an given array of integers where all negative integers appear before all the positive integers.
+	public static void rearrangeEliments() {
+		int [] arr ={-4, 8, 6, -5, 6, -2, 1, 2, 3, -11};
+		List<Integer> negativeList = new ArrayList<>();
+		List<Integer> positiveList = new ArrayList<>();
+		
+		for (int i = 0; i < arr.length; i++) {
+			if(arr[i] < 0 ) {
+				negativeList.add(arr[i]);
+			}else {
+				positiveList.add(arr[i]);
+			}
+		}
+		
+		List<Integer> completeList = new ArrayList<>();
+		completeList.addAll(negativeList);
+		completeList.addAll(positiveList);
+		System.out.println(completeList);
+	}
+	
+	
+	
 	
 }
