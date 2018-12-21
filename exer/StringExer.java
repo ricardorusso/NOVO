@@ -3,11 +3,13 @@ package exer;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 
 
@@ -495,5 +497,60 @@ public abstract class StringExer {
 		return (str2 + str.charAt(str.length()-1)+ str.charAt(str.length()-2));
 	}
 	
+	public static void swapLast2Chars2(String str) {
+		char [] arr = str.toCharArray();
+		StringBuilder str2 = new StringBuilder();
+		for (int i = 0; i < arr.length -2; i++) {
+			str2.append(arr[i]);
+		}
+		
+		System.out.println(str2.toString()+ arr[str.length()-1]+ arr[str.length()-2]);
+		
+	}
+	//43. Write a Java program to find the maximum occurring character in a string.
+	public static void countCharOfString(String str) {
+		Map<Character, Integer> map = new HashMap<>();
+		char[] arr = str.toCharArray();
+		
+		int count = 0;
+		for (int i = 0; i < arr.length; i++) {
+			if(!map.containsKey(arr[i])) {
+				map.put(arr[i], count);
+			}else{
+				map.put(arr[i], map.get(arr[i]) +1 );
+			}
+			
+		};
+		int count2=1;
+		Character str1 = null;
+		for (Entry<Character, Integer> entry : map.entrySet()) {
+			
+			if(entry.getValue()>count2) {
+				count2 = entry.getValue();
+				str1= entry.getKey();
+			}
+			
+		}
+		String str2 = "";
+		int highestValue = map.get(str1);
+		for (Entry<Character, Integer> entry : map.entrySet()) {
+			if(entry.getValue()==highestValue && !entry.getKey().equals(str1)) {
+				str2 +=str1 +" , "+entry.getKey();
+			}
+		}
+		if(!"".equals(str2)) {
+			System.out.println(str2);
 
+		}else {
+			System.out.println(str1);
+
+		}
+	}
 }
+
+
+
+
+
+
+

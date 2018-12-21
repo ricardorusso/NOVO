@@ -160,8 +160,17 @@ public class Main {
 
 		//System.out.println(StringExer.joinString("asdsadsaf", "fasadas"));
 		
-		System.out.println(StringExer.joinString("cggsas", "Sasjhh", true));
-		System.out.println(StringExer.swapLast2Chars("asdf"));
-	}
+		//System.out.println(StringExer.joinString("cggsas", "Sasjhh", true));
+		//System.out.println(StringExer.swapLast2Chars("asdf"));
+		//StringExer.swapLast2Chars2("asdf");
+		
+		//ArrExer.exer45();
+		//ArrExer.findCombinations(53);
+		StringExer.countCharOfString("strittggg");
+		
+		String ola= "ola";
+		int [] arr = new int [256];
+		System.out.println(arr['a']);
+	}	
 
 }
