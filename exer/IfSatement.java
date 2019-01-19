@@ -2,11 +2,11 @@ package exer;
 
 public interface IfSatement {
 
-//	Write a Java program that reads in two floating-point numbers and tests whether they are the same up to three decimal places.
-//
-//	Test Data
-//	Input floating-point number: 1256
-//	Input floating-point another number: 3254
+	//	Write a Java program that reads in two floating-point numbers and tests whether they are the same up to three decimal places.
+	//
+	//	Test Data
+	//	Input floating-point number: 1256
+	//	Input floating-point another number: 3254
 
 	// 5. Write a Java program that keeps a number from the user and generates an
 	// integer between
@@ -34,4 +34,16 @@ public interface IfSatement {
 		}
 	}
 
+	public static void printNumber(int nmb) {
+		
+			StringBuilder sb = new StringBuilder();
+			for (int i = 1; i <= nmb; i++) {
+				sb.append(i);		
+				System.out.println(sb);
+
+			}
+	
+
+
+	}
 }
