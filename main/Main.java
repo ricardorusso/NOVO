@@ -221,7 +221,8 @@ public class Main {
 		//	fw.close();
 		//	System.out.println("escreveu");
 
-		FileEx.splitFileContentToSeperateFiles(FileEx.fileXml);
+		FileEx.splitFileContentToSeperateFiles(FileEx.fileXml, "<message>","</message>");
+	
 	}	
 
 }

@@ -1,6 +1,5 @@
 package exer;
 
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -10,10 +9,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-
-
-
-
 public abstract class StringExer {
 
 	public static String fox = "The quick_brown_fox_jumps_over_the_lazy_dog_ac";

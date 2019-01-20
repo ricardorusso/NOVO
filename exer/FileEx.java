@@ -14,10 +14,13 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.logging.Level;
 
 import com.oracle.tools.packager.Log.Logger;
+
+import sun.tools.java.ScannerInputReader;
 
 public abstract class FileEx {
 	private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FileEx.class.getName());
@@ -89,9 +92,16 @@ public abstract class FileEx {
 		System.out.println(d.toGMTString());
 	}
 	//8. Write Java program to read input from java console. 
+	public static Scanner input = new Scanner(System.in);
 	public static void readInput() {
-		File file = new File("D://FileEx/newfile.txt");
+		System.out.println("Insira Nome :");
 
+		String str = input.next();
+
+		System.out.println("Teu nome é " + str);
+		input.next();
+		System.out.println("jsbdjabjhdasndkasb");
+		input.close();
 	}
 	//11. Write a Java program to read a file content line by line
 
@@ -181,12 +191,12 @@ public abstract class FileEx {
 	}
 
 	public static void whrtiteToFile(File file, String str, boolean append) {
-		
+
 
 
 		try 
 		(
-			
+
 				FileWriter fr = new FileWriter(file,append);
 				)
 		//bw = new BufferedWriter(fr);
@@ -201,8 +211,8 @@ public abstract class FileEx {
 		}
 
 
-			 
-		
+
+
 
 	}
 
@@ -210,9 +220,6 @@ public abstract class FileEx {
 	public static void read3Lines(File file) throws IOException {
 		FileReader fr = null;
 		BufferedReader br = null;
-
-
-
 		try {
 			fr = new FileReader(file);
 			br= new BufferedReader(fr);
@@ -295,12 +302,7 @@ public abstract class FileEx {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			logger.log(Level.INFO, e.toString());
-
-
 		}
-
-
-
 
 	}
 
@@ -315,10 +317,10 @@ public abstract class FileEx {
 		}
 		return false;
 	}
-	
-	public static File fileXml = new File("D:\\FileEx\\TABLE_EXPORT_DATA.xml");
 
-	public static void splitFileContentToSeperateFiles(File xml) {
+	public static File fileXml = new File("D:\\FileEx\\TABLE_EXPORT_DATA_2.xml");
+
+	public static void splitFileContentToSeperateFiles(File xml, String begin, String end) {
 		if(!xml.isFile()) {
 			System.out.println("Not a file");
 			return;
@@ -335,18 +337,21 @@ public abstract class FileEx {
 			}
 			//System.out.println(strB);
 			int nameCount = 1;
-			while (strB.indexOf("</ROW>")!=-1) {
-				int row = strB.indexOf("<ROW>");
-				int rowEnd = strB.indexOf("</ROW>");
-				String newS = strB.substring(row+("<ROW>".length()),rowEnd);
+			while (strB.indexOf(begin)!=-1) {
+				int row = strB.indexOf(begin);
+				int rowEnd = strB.indexOf(end);
+				String subString = strB.substring(row+(begin.length()),rowEnd);
 				File newFile = new File("D:\\FileEx\\Nova\\"+nameCount+"_.xml");
-
-				try (FileWriter fw = new FileWriter(newFile))
+				FileWriter fw = null;
+				try 
 				{
-					fw.write(newS);
-					System.out.println("Ficheiro Criado " +newFile.getName());
+					fw = new FileWriter(newFile);
+					fw.write(subString);
+					System.out.println("Ficheiro Criado " +newFile.getName()+" em "+newFile.getPath());
 				} catch (Exception e) {
 					// TODO: handle exception
+				}finally {
+					if(fw!=(null))fw.close();
 				}
 				nameCount++;
 				System.out.println();
