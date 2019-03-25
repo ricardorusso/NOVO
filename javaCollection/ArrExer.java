@@ -385,4 +385,26 @@ public abstract class ArrExer {
 		}
 		
 	}
+	public static void quickSort () {
+		int [] arr = {
+				51,95,66,72,42,38,39,41,15
+		};
+		int lastMember = arr.length-1;
+		
+		for (int i = 0; i < arr.length; i++) {
+			if(i+1<arr.length && arr[i+1]<arr[i] ) {
+				arr[i]=arr[i+1];
+			}else if(arr[i]>arr[lastMember]) {
+				arr[lastMember]=arr[i];
+			}
+				
+		}
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println(arr[i]);
+		}
+		
+		
+		
+		
+	}
 }

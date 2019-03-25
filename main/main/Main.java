@@ -1,51 +1,21 @@
 package main;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
+
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.Reader;
-import java.sql.DriverManager;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Locale;
-import java.util.Set;
-import java.util.SortedMap;
-import java.util.SortedSet;
-import java.util.TreeMap;
-import java.util.TreeSet;
-
-import org.apache.poi.hssf.record.SSTRecord;
-
-import com.sun.jdi.connect.spi.Connection;
-import com.sun.tools.classfile.StackMapTable_attribute.append_frame;
-import com.sun.tools.doclets.internal.toolkit.util.DocFinder.Output;
-
-import exer.FileEx;
-import exer.IfSatement;
-import javaCollection.TreeSetMapExer;
-import sun.tools.tree.DivRemExpression;
 
 public class Main {
-	public static final String FOX = "Theajkdandkan23f";
-	public static final int[] arrN = { 0, 2, 1, 3, 4, 231, 7, 213213 };
-	private static int [] arr2 = {28,1,1};
-	public static SortedSet<String> treeColors = new TreeSet<>(
-			Arrays.asList("red", "blue", "orange", "black", "blue", "yellow"));
-	public static Set<String> setExample = new HashSet<>(treeColors);
-	public static SortedMap<Integer, String> treeMapExample = new TreeMap<>(TreeSetMapExer.putKeyTreeSet((TreeSet<String>) treeColors));
-	public static List<String> listaColors = new ArrayList<>(Arrays.asList("Verde","Vermelho","Amarelo", "Preto", "Azul")); 
+
+
+	//	public static final String FOX = "Theajkdandkan23f";
+	//	public static final int[] arrN = { 0, 2, 1, 3, 4, 231, 7, 213213 };
+	//	private static int [] arr2 = {28,1,1};
+	//	public static SortedSet<String> treeColors = new TreeSet<>(
+	//			Arrays.asList("red", "blue", "orange", "black", "blue", "yellow"));
+	//	public static Set<String> setExample = new HashSet<>(treeColors);
+	//	public static SortedMap<Integer, String> treeMapExample = new TreeMap<>(TreeSetMapExer.putKeyTreeSet((TreeSet<String>) treeColors));
+	//	public static List<String> listaColors = new ArrayList<>(Arrays.asList("Verde","Vermelho","Amarelo", "Preto", "Azul")); 
 	public static void main(String[] args) throws IOException {
-		treeMapExample.put(69, "posição ");
-		treeMapExample.put(51, "sadas");
+		//		treeMapExample.put(69, "posição ");
+		//		treeMapExample.put(51, "sadas");
 
 
 
@@ -221,8 +191,43 @@ public class Main {
 		//	fw.close();
 		//	System.out.println("escreveu");
 
-		FileEx.splitFileContentToSeperateFiles(FileEx.fileXml, "<message>","</message>");
-	
-	}	
+		//FileEx.splitFileContentToSeperateFiles(FileEx.fileXml, "<message>","</message>");
+		//ArrExer.quickSort();
+		//		LocalTime now = LocalTime.now();
+		//		LocalTime str = LocalTime.of(11, 2);
+		//		System.out.println(now);
+		//		Duration duration = Duration.between(now, str);
+		//		System.out.println(duration);
+		//		
+		//		Calendar cal = Calendar.getInstance();
+		//		int x =cal.getActualMaximum(Calendar.DAY_OF_MONTH);
+		//		System.out.println(x);
+		//		
+		//		cal.add(Calendar.DATE, +x);
+		//		System.out.println(cal.getTime());
 
+		Integer []arrInt = {
+				1,2,3,6,4,8,9
+
+		}	;
+		Double []arrDouble = {
+				1.0,2.0,3.0,6.0,4.9,8.9,9.9
+
+		}	;
+
+		Character arrChar[] = {
+				'a','b'
+		};
+		arrPrint(arrInt);
+		arrPrint(arrDouble);
+		arrPrint(arrChar);
+	}
+
+	public static <E> void  arrPrint (E[] arr) {
+		for (E e : arr) {
+			System.out.printf("%s ", e);
+		}
+	}
 }
+
+
