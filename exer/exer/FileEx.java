@@ -2,8 +2,8 @@ package exer;
 
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -18,10 +18,6 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.logging.Level;
 
-import com.oracle.tools.packager.Log.Logger;
-
-import sun.tools.java.ScannerInputReader;
-
 public abstract class FileEx {
 	private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FileEx.class.getName());
 	private static final String PATHFILE = "D://FileEx/newfile.txt";
@@ -29,6 +25,51 @@ public abstract class FileEx {
 	public static File file = new File("D://FileEx/");
 	//1. Write a Java program to get a list of all file/directory names from the given. Go to the editor
 
+
+	public static void splitMessager (File file) throws IOException {
+
+		FileReader read = new FileReader(file);	
+		BufferedReader	br = new BufferedReader(read);
+
+		String str;
+		String appendStart ="Começo";
+		String appendEnd ="Fim";
+		String xml = "" ;
+		while (((str=(br.readLine()))!=null)) {
+			xml += str+"\n";
+		}
+		//System.out.println(xml);
+
+
+
+		
+		int count= 1;
+		while (xml.indexOf("<message>")!=-1) {
+			int startIndex = xml.indexOf("<message>");
+			int endIndex = xml.indexOf("</message>");
+			String sub = xml.substring(startIndex,endIndex+"</message>".length());
+			
+			
+			xml = xml.substring(endIndex+"</message>".length());
+			try (
+					FileWriter fw = new FileWriter(new File(file.getParent()+"\\Novo\\"+count+".xml"));
+
+					BufferedWriter bw = new BufferedWriter(fw);
+					){
+				bw.write(sub);
+
+
+				count++;
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+
+			}
+
+		}
+
+
+	}
 	public static void getListFile() {
 		//File file = new File("D://FileEx/");
 		List<String> listaFileNames = Arrays.asList(file.list());

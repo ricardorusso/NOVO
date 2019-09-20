@@ -541,6 +541,17 @@ public abstract class StringExer {
 
 		}
 	}
+	//73. Write a Java program to return true if the given string contains an appearance of 'abc' but not directly a period(.) and followed by.
+	public static boolean exer73(String str) {
+		String teste  ="testabc.test";
+		if(teste.indexOf(".")!=-1) {
+			int point = teste.indexOf(".");
+			String sub = teste.substring(0, point);
+			return sub.contains(str);
+		}else {
+			return teste.contains(str);
+		}
+	}
 }
 
 

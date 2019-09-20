@@ -20,5 +20,13 @@
 	<classpathentry exported="true" kind="lib" path="C:/Program Files/Java/jdk1.8.0_171/lib/sa-jdi.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/Program Files/Java/jdk1.8.0_171/lib/tools.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/Program Files/Java/jdk1.8.0_171/lib/xmlbeans-3.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Ricardo/Documents/JavaWorkplace/NOVO/libs/jar_files.zip"/>
+	<classpathentry kind="lib" path="libs/jar_files.zip"/>
+	<classpathentry kind="lib" path="C:/Users/Ricardo/Documents/JavaWorkplace/NOVO/libs/commons-codec-1.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ricardo/Documents/JavaWorkplace/NOVO/libs/commons-codec-1.13-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ricardo/Documents/JavaWorkplace/NOVO/libs/commons-codec-1.13-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ricardo/Documents/JavaWorkplace/NOVO/libs/commons-codec-1.13-tests.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ricardo/Documents/JavaWorkplace/NOVO/libs/commons-codec-1.13-test-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ricardo/Documents/JavaWorkplace/NOVO/libs/jPowerShell-3.1.1.jar" sourcepath="C:/Users/Ricardo/.m2/repository/com/profesorfalken/jPowerShell/3.1.1/jPowerShell-3.1.1-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

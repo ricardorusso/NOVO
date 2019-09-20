@@ -1,19 +1,54 @@
 package main;
 
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Base64;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.NavigableSet;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.SortedMap;
+import java.util.SortedSet;
+import java.util.Timer;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
+import org.apache.commons.codec.binary.Base32;
+import org.apache.poi.ddf.EscherColorRef.SysIndexSource;
+import org.apache.poi.util.SystemOutLogger;
+
+import com.graphbuilder.curve.BSpline;
+import com.profesorfalken.jpowershell.PowerShell;
+import com.profesorfalken.jpowershell.PowerShellNotAvailableException;
+
+import exer.FileEx;
+import exer.StringExer;
+import javaCollection.TreeSetMapExer;
 
 public class Main {
 
 
-	//	public static final String FOX = "Theajkdandkan23f";
-	//	public static final int[] arrN = { 0, 2, 1, 3, 4, 231, 7, 213213 };
-	//	private static int [] arr2 = {28,1,1};
-	//	public static SortedSet<String> treeColors = new TreeSet<>(
-	//			Arrays.asList("red", "blue", "orange", "black", "blue", "yellow"));
-	//	public static Set<String> setExample = new HashSet<>(treeColors);
-	//	public static SortedMap<Integer, String> treeMapExample = new TreeMap<>(TreeSetMapExer.putKeyTreeSet((TreeSet<String>) treeColors));
-	//	public static List<String> listaColors = new ArrayList<>(Arrays.asList("Verde","Vermelho","Amarelo", "Preto", "Azul")); 
-	public static void main(String[] args) throws IOException {
+	public static final String FOX = "Theajkdandkan23f";
+	public static final int[] arrN = { 0, 2, 1, 3, 4, 231, 7, 213213 };
+	private static int [] arr2 = {28,1,1};
+	public static SortedSet<String> treeColors = new TreeSet<>(
+			Arrays.asList("red", "blue", "orange", "black", "blue", "yellow"));
+	public static Set<String> setExample = new HashSet<>(treeColors);
+	public static SortedMap<Integer, String> treeMapExample = new TreeMap<>(TreeSetMapExer.putKeyTreeSet((TreeSet<String>) treeColors));
+	public static List<String> listaColors = new ArrayList<>(Arrays.asList("Verde","Vermelho","Amarelo", "Preto", "Azul")); 
+	public static void main(String[] args) throws IOException, InterruptedException {
 		//		treeMapExample.put(69, "posição ");
 		//		treeMapExample.put(51, "sadas");
 
@@ -205,29 +240,148 @@ public class Main {
 		//		
 		//		cal.add(Calendar.DATE, +x);
 		//		System.out.println(cal.getTime());
+//		
+//		
+//		Integer []arrInt = {
+//				1,2,3,6,4,8,9
+//
+//		};
+//
+//		reverse(arrInt);
+//		String dateS = "20191005";
+//		Locale local =  Locale.getDefault();
+//		SimpleDateFormat format =  new SimpleDateFormat("yyyyMMdd",local);
+//		try {
+//			Date date = format.parse(dateS);
+//			System.out.println(date);
+//		} catch (ParseException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
+//	private static <T> void  reverse (T [] arr) {
+//		for (int i =arr.length-1; i >= 0; i--) {
+//			System.out.println(arr[i]);
+//		}
 
-		Integer []arrInt = {
-				1,2,3,6,4,8,9
+	//	FileEx.splitMessager(new File("D:\\FileEx\\mensagem.txt"));
+	//	checkperid(" 20 ");
+		
+		
+//		String pass = "123456";
+//		String enconded  =new String(org.apache.commons.codec.binary.Base64.encodeBase64(pass.getBytes()));
+//		String decoded  =new String( org.apache.commons.codec.binary.Base64.decodeBase64(enconded.getBytes()));
+//	 System.out.println(enconded);
+//	 System.out.println(decoded);
+//	 Tarefa tarefa = new Tarefa();
+//	 
+//	 Timer timer = new Timer();
+//	 System.out.println(tarefa.isBol());
+//	Scanner sc = new Scanner(System.in);
+//	 timer.schedule(tarefa, 1000, 10000); 
+//	 //Thread.sleep(10200);
+//	
+//	do {String imput  =  sc.next();
+//		tarefa.setImput(imput);
+//	} while (tarefa.isBol()); 
+//
+//	 System.out.println(tarefa.isBol());
+//	 
 
-		}	;
-		Double []arrDouble = {
-				1.0,2.0,3.0,6.0,4.9,8.9,9.9
-
-		}	;
-
-		Character arrChar[] = {
-				'a','b'
-		};
-		arrPrint(arrInt);
-		arrPrint(arrDouble);
-		arrPrint(arrChar);
-	}
-
-	public static <E> void  arrPrint (E[] arr) {
-		for (E e : arr) {
-			System.out.printf("%s ", e);
+		 
+		try (PowerShell power = PowerShell.openSession();)
+		{
+		
+			System.out.println(power.executeScript("D:\\FileEx\\Untitled1.ps1","'D:\\FileEx\\MonitorCSW .xlsx' 'D:\\FileEx\\test4.png'").getCommandOutput());
+		} catch (PowerShellNotAvailableException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-	}
+       
+ 
+
 }
+
+
+	
+	
+	private static HashSet<String> checkperid(String imput) {
+		System.out.println(imput);
+		//14 a 18 e 19 a 29
+		LinkedHashSet<String> set = new LinkedHashSet<>();
+		String [] split;
+		if (imput.contains("e")) {
+			 split = imput.split("e");
+			
+		}else {
+			split = new String [] {
+					imput
+			};
+
+		}
+	
+		for (int i = 0; i < split.length; i++) {
+			String [] splitA = removeIlegalChar(split[i]).split("a");
+			List<Integer> list = new ArrayList<>();
+			for (String string : splitA) {
+				String str = removeLetters(string);
+				if(!str.equals(""))
+					list.add(Integer.parseInt(str));
+			}
+			Collections.sort(list);
+			System.out.println(list);
+			if (!list.isEmpty()) {
+				for (int j = list.get(0); j <= list.get(list.size() - 1); j++) {
+					
+					set.add(Integer.toString(j));
+				} 
+			}
+			
+		}
+		
+		return new HashSet<>(set);
+		
+	}
+	private static String removeIlegalChar(String next) {
+		char[] arrChar = {';','.',':','.' ,'<','>' 	
+		};
+		//System.out.println(next);
+		for (int i = 0; i < arrChar.length; i++) {
+		
+			next = next.replace(arrChar[i], ' ');
+			
+		}
+//		char [] arrNext = next.toCharArray();
+//		String result ="";
+//		for (int i = 0; i < arrNext.length; i++) {
+//			if(Character.isDigit(arrNext[i]))
+//			result+=arrNext[i];
+//		}
+		String result =next.replaceAll(" ", "");
+	//	System.out.println(result);
+		return result.trim();
+	}
+	private static String removeLetters(String string) {
+
+		
+		
+		char [] arr = string.toCharArray();
+		String result ="";
+		for (int i = 0; i < arr.length; i++) {
+			if(Character.isDigit(arr[i])){
+				result+=arr[i];
+			}
+		}
+		
+		if (result!="" && Integer.parseInt(result)>0 && Integer.parseInt(result)<=31){
+			return result;
+		}else {
+			return "";
+		}
+		
+
+}
+}
+
 
 

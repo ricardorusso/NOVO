@@ -33,7 +33,7 @@ public abstract class ExerArrayList {
 	
 	//20. Write a Java program to increase the size of an array list.
 	public static void increaseArrayLis(int number) {
-		 ((ArrayList<String>) listaColors).ensureCapacity(number);
+		 ((ArrayList<String>) listaColors).ensureCapacity(number);;
 		 
 	}
 	
