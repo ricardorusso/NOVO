@@ -2,6 +2,7 @@ package main;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -32,6 +33,7 @@ import org.apache.poi.util.SystemOutLogger;
 import com.graphbuilder.curve.BSpline;
 import com.profesorfalken.jpowershell.PowerShell;
 import com.profesorfalken.jpowershell.PowerShellNotAvailableException;
+import com.sun.tools.hat.internal.parser.Reader;
 
 import exer.FileEx;
 import exer.StringExer;
@@ -287,12 +289,15 @@ public class Main {
 //
 //	 System.out.println(tarefa.isBol());
 //	 
-
-		 
-		try (PowerShell power = PowerShell.openSession();)
+		File file = new File("D:\\FileEx\\MonitorCSW .xlsx");
+		String dirFile =  file.getAbsolutePath();
+		 	
+		try (PowerShell power = PowerShell.openSession())
 		{
-		
-			System.out.println(power.executeScript("D:\\FileEx\\Untitled1.ps1","'D:\\FileEx\\MonitorCSW .xlsx' 'D:\\FileEx\\test4.png'").getCommandOutput());
+			InputStream iS =   Main.class.getResourceAsStream("/save_image.ps1");
+			InputStreamReader fr = new InputStreamReader(iS);
+			BufferedReader br =  new BufferedReader(fr);
+			System.out.println(power.executeScript(br,"'"+dirFile+"'"+ " 'D:\\FileEx\\test4.png'").getCommandOutput());
 		} catch (PowerShellNotAvailableException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
